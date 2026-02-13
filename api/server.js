@@ -24,7 +24,7 @@ const server = http.createServer((req, res) => {
         });
         const data = await ollamaRes.json();
         res.writeHead(200, { "Content-Type": "application/json" });
-        res.end(JSON.stringify({ response: data.response || "" }));
+        res.end(JSON.stringify({ response: data.response || "No response." }));
       } catch (err) {
         console.error("Error:", err.message);
         res.writeHead(502, { "Content-Type": "application/json" });
